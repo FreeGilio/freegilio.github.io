@@ -1,4 +1,5 @@
 import { PALETTE } from "./constants";
+import createPlayer from "./entities/Player";
 import createKaplayCtx from "./kaplayCTX";
 
 export default async function initGame() {
@@ -61,4 +62,11 @@ export default async function initGame() {
         k.fixed()
     ]);
 
+    k.onResize(() => {
+        tiledBackground.width = k.width();
+        tiledBackground.height = k.height();
+        tiledBackground.uniform.u_aspect = k.width() / k.height()
+    });
+
+    createPlayer(k, k.vec2(k.center()), 700);
 }
