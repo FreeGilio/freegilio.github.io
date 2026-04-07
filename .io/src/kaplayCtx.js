@@ -1,12 +1,12 @@
 import kaplay from "kaplay";
 
-export default function createKaplayCtx() {
+export default function createKaplayCtx(){
     return kaplay({
         global: false,
         pixelDensity: 2,
         touchToMouse: true,
-        debug: true, // set to false
+        debug: true,
         debugKey: "f1",
         canvas: document.getElementById("game"),
-    })
+    });
 }
