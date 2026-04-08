@@ -48,6 +48,14 @@ export default async function initGame() {
     k.loadSprite("platformer-js", "./projects/platformer-js.png");
     k.loadShaderURL("tiledPattern", null, "./shaders/tiledPattern.frag");
 
+    if (k.width() < 10000){
+        k.setCamScale(k.vec2(0.5));
+    } else {
+        k.setCamScale(k.vec2(0.8));
+    }
+
+
+    // Adding tiled background
     const tiledBackground = k.add([
         k.uvquad(k.width(),k.height()),
         k.shader("tiledPattern", () => ({
@@ -62,6 +70,7 @@ export default async function initGame() {
         k.fixed()
     ]);
 
+    // Auto resize tiles
     k.onResize(() => {
         tiledBackground.width = k.width();
         tiledBackground.height = k.height();
