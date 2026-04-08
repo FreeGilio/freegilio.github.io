@@ -56,7 +56,7 @@ export default function createPlayer(k, posVec2, speed){
             player.direction = worldMousePos.sub(player.pos).unit();
         }
 
-        // implement animations
+        
 
         if (player.direction.eq(k.vec2(0,0)) 
             && !player.getCurAnim().name.includes("idle")){
