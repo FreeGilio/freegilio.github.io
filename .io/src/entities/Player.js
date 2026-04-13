@@ -1,4 +1,5 @@
 import { DIAGONAL_FACTOR } from "../constants";
+import { isEmailModalVisibleAtom, isProjectModalVisibleAtom, isSocialModalVisibleAtom, store } from "../store";
 
 export default function createPlayer(k, posVec2, speed){
     const player = k.add([
@@ -48,6 +49,11 @@ export default function createPlayer(k, posVec2, speed){
             );
         }
 
+        if (store.get(isSocialModalVisibleAtom) || 
+        store.get(isEmailModalVisibleAtom) || 
+        store.get(isProjectModalVisibleAtom) 
+      )
+      return;
 
         player.direction = k.vec2(0, 0);
         const worldMousePos = k.toWorld(k.mousePos());
@@ -55,8 +61,6 @@ export default function createPlayer(k, posVec2, speed){
         if (isMouseDown){
             player.direction = worldMousePos.sub(player.pos).unit();
         }
-
-        
 
         if (player.direction.eq(k.vec2(0,0)) 
             && !player.getCurAnim().name.includes("idle")){

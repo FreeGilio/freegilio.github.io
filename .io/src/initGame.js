@@ -1,6 +1,7 @@
 import { PALETTE } from "./constants";
 import createPlayer from "./entities/Player";
 import createKaplayCtx from "./kaplayCTX";
+import { cameraZoomValueAtom, store } from "./store";
 
 export default async function initGame() {
     const k = createKaplayCtx();
@@ -49,11 +50,17 @@ export default async function initGame() {
     k.loadShaderURL("tiledPattern", null, "./shaders/tiledPattern.frag");
 
     if (k.width() < 10000){
-        k.setCamScale(k.vec2(0.5));
+        store.set(cameraZoomValueAtom, 0.5);
+        k.setCamScale(k.vec2(0.5));  
     } else {
+        store.set(cameraZoomValueAtom, 0.8);
         k.setCamScale(k.vec2(0.8));
     }
 
+    k.onUpdate(() => {
+        const camZoomValue = store.get(cameraZoomValueAtom);
+        if (camZoomValue !== k.getCamScale()) k.setCamScale(k.vec2(camZoomValue));
+    });
 
     // Adding tiled background
     const tiledBackground = k.add([
