@@ -39,6 +39,7 @@ export default function createPlayer(k, posVec2, speed){
     });
 
     player.onUpdate(() => {
+      //camera following the player
         if (!k.camPos().eq(player.pos)){
             k.tween(
                 k.camPos(), 

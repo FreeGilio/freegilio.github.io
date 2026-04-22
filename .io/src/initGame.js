@@ -5,26 +5,27 @@ import { cameraZoomValueAtom, store } from "./store";
 
 export default async function initGame() {
     const k = createKaplayCtx();
-    k.loadSprite("player", "./sprites/player.png",{
+    k.loadSprite("player", "./sprites/bakari.png",{
         sliceX: 4,
-        sliceY: 8,
+        sliceY: 16,
         anims:{
-            "walk-down-idle": 0,
-            "walk-down": { from: 0, to: 3, loop: true },
-            "walk-left-down": { from: 4, to: 7, loop: true },
-            "walk-left-down-idle": 4,
-            "walk-left": { from: 8, to: 11, loop: true },
-            "walk-left-idle": 8,
-            "walk-left-up": { from: 12, to: 15, loop: true },
-            "walk-left-up-idle": 12,
-            "walk-up": { from: 16, to: 19, loop: true },
-            "walk-up-idle": 16,
-            "walk-right-up": { from: 20, to: 23, loop: true },
-            "walk-right-up-idle": 20,
-            "walk-right": { from: 24, to: 27, loop: true },
-            "walk-right-idle": 24,
-            "walk-right-down": { from: 28, to: 31, loop: true },
-            "walk-right-down-idle": 28,
+            "walk-down-idle": { from: 0, to: 3, loop: true },
+            "walk-left-down-idle": { from: 4, to: 7, loop: true },
+            "walk-left-idle": { from: 8, to: 11, loop: true },
+            "walk-left-up-idle": { from: 12, to: 15, loop: true },
+            "walk-up-idle": { from: 16, to: 19, loop: true },
+            "walk-right-up-idle": { from: 20, to: 23, loop: true },
+            "walk-right-idle": { from: 24, to: 27, loop: true },
+            "walk-right-down-idle": { from: 28, to: 31, loop: true },
+            "walk-down": { from: 32, to: 35, loop: true },
+            "walk-left-down": { from: 36, to: 39, loop: true },
+            "walk-left": { from: 40, to: 43, loop: true },
+            "walk-left-up": { from: 44, to: 47, loop: true },
+            "walk-up": { from: 48, to: 51, loop: true },
+            "walk-right-up": { from: 52, to: 55, loop: true },
+            "walk-right": { from: 56, to: 59, loop: true },
+            "walk-right-down": { from: 60, to: 63, loop: true },
+         
         }
     });
     k.loadFont("ibm-regular", "./fonts/IBMPlexSans-Regular.ttf");
