@@ -1,10 +1,10 @@
-import { DIAGONAL_FACTOR } from "../constants";
+import { DIAGONAL_FACTOR, SPRITE_SCALE } from "../constants";
 import { isEmailModalVisibleAtom, isProjectModalVisibleAtom, isSocialModalVisibleAtom, store } from "../store";
 
 export default function createPlayer(k, posVec2, speed){
     const player = k.add([
         k.sprite("player", {anim: "walk-down-idle"}),
-        k.scale(8),
+        k.scale(SPRITE_SCALE),
         k.anchor("center"),
         k.area({ shape: new k.Rect(k.vec2(0), 5, 10)}),
         k.body(),

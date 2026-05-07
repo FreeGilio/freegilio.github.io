@@ -1,5 +1,6 @@
 import { PALETTE } from "./constants";
 import createPlayer from "./entities/Player";
+import createArea from "./entities/Playground";
 import createKaplayCtx from "./kaplayCTX";
 import { cameraZoomValueAtom, store } from "./store";
 
@@ -28,6 +29,7 @@ export default async function initGame() {
          
         }
     });
+    k.loadSprite("grass-area", "./sprites/GrassAreaWip.png");
     k.loadFont("ibm-regular", "./fonts/IBMPlexSans-Regular.ttf");
     k.loadFont("ibm-bold", "./fonts/IBMPlexSans-Bold.ttf");
     k.loadSprite("github-logo", "./logos/github-logo.png");
@@ -85,5 +87,7 @@ export default async function initGame() {
         tiledBackground.uniform.u_aspect = k.width() / k.height()
     });
 
+    createArea(k);
     createPlayer(k, k.vec2(k.center()), 700);
+    
 }
