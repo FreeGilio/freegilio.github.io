@@ -1,10 +1,16 @@
 import { PALETTE } from "./constants";
 import createPlayer from "./entities/Player";
-import createArea from "./entities/Playground";
+import createArea from "./components/Playground";
 import createKaplayCtx from "./kaplayCTX";
 import { cameraZoomValueAtom, store } from "./store";
+import makeSection from "./components/Section";
+import makeEmailIcon from "./components/EmailIcon";
+import makeSocialIcon from "./components/SocialIcon";
 
 export default async function initGame() {
+    const generalData = await (await fetch("./configs/generalData.json")).json();
+    const socialsData = await (await fetch("./configs/socialsData.json")).json();
+
     const k = createKaplayCtx();
     k.loadSprite("player", "./sprites/bakari.png",{
         sliceX: 4,
@@ -35,7 +41,7 @@ export default async function initGame() {
     k.loadSprite("github-logo", "./logos/github-logo.png");
     k.loadSprite("linkedin-logo", "./logos/linkedin-logo.png");
     k.loadSprite("youtube-logo", "./logos/youtube-logo.png");
-    k.loadSprite("x-logo", "./logos/x-logo.png");
+    k.loadSprite("bluesky-logo", "./logos/Bluesky-logo.png");
     k.loadSprite("substack-logo", "./logos/substack-logo.png");
     k.loadSprite("javascript-logo", "./logos/js-logo.png");
     k.loadSprite("typescript-logo", "./logos/ts-logo.png");
@@ -88,6 +94,78 @@ export default async function initGame() {
     });
 
     createArea(k);
+
+    makeSection(
+        k, 
+        k.vec2(k.center().x, k.center().y - 400), 
+        "About", 
+        (parent) => {
+            const container = parent.add([k.pos(-805, -700), k.opacity(0)]);
+
+            container.add([
+                k.text(generalData.header.title, { font: "ibm-bold", size: 88}),
+                k.color(k.Color.fromHex(PALETTE.color1)),
+                k.pos(395,0),
+                k.opacity(0),
+            ]);
+
+            container.add([
+                k.text(generalData.header.subtitle, { font: "ibm-bold", size: 88}),
+                k.color(k.Color.fromHex(PALETTE.color1)),
+                k.pos(485,100),
+                k.opacity(0),
+            ]);
+
+            const socialContainer = container.add([k.pos(130, 0), k.opacity(0)]);
+
+            for (const socialData of socialsData) {
+                if (socialData.name === "Email") {
+                 makeEmailIcon(
+                    k, 
+                    socialContainer, 
+                    k.vec2(socialData.pos.x, socialData.pos.y), 
+                    socialData.imageData, 
+                    socialData.subtitle, 
+                    socialData.email
+                );
+                continue;
+                }
+
+                makeSocialIcon(
+                    k, 
+                    socialContainer, 
+                    k.vec2(socialData.pos.x, socialData.pos.y), 
+                    socialData.imageData, 
+                    socialData.subtitle, 
+                    socialData.link,
+                    socialData.description
+                );
+            }
+        }
+    );
+
+    makeSection(
+        k, 
+        k.vec2(k.center().x - 400, k.center().y), 
+        "Skills", 
+        (parent) => {}
+    );
+
+    makeSection(
+        k, 
+        k.vec2(k.center().x + 400, k.center().y), 
+        "Experience", 
+        (parent) => {}
+    );
+
+     makeSection(
+        k, 
+        k.vec2(k.center().x, k.center().y + 400), 
+        "Projects", 
+        (parent) => {}
+    );
+
+
     createPlayer(k, k.vec2(k.center()), 700);
     
 }

@@ -3,7 +3,7 @@ import { isProjectModalVisibleAtom, chosenProjectDataAtom } from "../store";
 
 export default function ProjectModal(){
     const projectData = useAtomValue(chosenProjectDataAtom);
-    const [isVisible, setIsVisible] = useAtom(isSocialModalVisibleAtom);
+    const [isVisible, setIsVisible] = useAtom(isProjectModalVisibleAtom);
 
     return (
     isVisible && (
@@ -16,7 +16,7 @@ export default function ProjectModal(){
                         key={linkData.id} 
                         className="modal-btn" 
                         onClick={() => {
-                            
+                            window.open(linkData.link, "_blank");
                         }}
                         >
                         {linkData.name}

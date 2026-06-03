@@ -1,0 +1,41 @@
+[
+  {
+    "pos": { "x": 300, "y": 250 },
+    "name": "GitHub",
+    "description": "GitHub is where I host my projects.",
+    "link": "https://github.com/FreeGilio",
+    "imageData": { "name": "github-logo", "width": 228.6, "height": 179.5 }
+  },
+  {
+    "pos": { "x": 500, "y": 250 },
+    "name": "X",
+    "description": "Here is my Bluesky!",
+    "link": "https://bsky.app/profile/freegilio.bsky.social",
+    "imageData": {
+      "name": "bluesky-logo",
+      "width": 128,
+      "height": 128
+    }
+  },
+  {
+    "pos": { "x": 700, "y": 250 },
+    "name": "Itch.io",
+    "description": "I post my game projects here",
+    "link": "https://freegilio.itch.io/",
+    "imageData": {
+      "name": "substack-logo",
+      "width": 128,
+      "height": 128
+    }
+  },
+  {
+    "pos": { "x": 900, "y": 250 },
+    "name": "Email",
+    "address": "gillvano.linakala@gmail.com",
+    "imageData": {
+      "name": "email-logo",
+      "width": 128,
+      "height": 128
+    }
+  }
+]
