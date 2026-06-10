@@ -1,3 +1,12 @@
+# Gillvano Linakala's showcase portfolio
+
+Welcome to my showcase portfolio. This portfolio is being made with HTML, CSS and JavaScript. 
+To use this as an template, you would need certain assets and dependencies or otherwise this website will
+not work. Follow this [guide](https://drive.google.com/file/d/1wGGzF4K7Uag49XI7-1mZnbt0Spo94SLk/view?usp=drive_link)
+
+To create your own assets, you can use any drawing or photo editing software, but for pixel art specifically,
+I recommend [Aseprite](https://www.aseprite.org/) or [Libresprite](https://libresprite.github.io/#!/)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
