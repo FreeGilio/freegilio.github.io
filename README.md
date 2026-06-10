@@ -7,6 +7,8 @@ not work. Follow this [guide](https://drive.google.com/file/d/1wGGzF4K7Uag49XI7-
 To create your own assets, you can use any drawing or photo editing software, but for pixel art specifically,
 I recommend [Aseprite](https://www.aseprite.org/) or [Libresprite](https://libresprite.github.io/#!/)
 
+All the files should be in the ".io" folder
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
