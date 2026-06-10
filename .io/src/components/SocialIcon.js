@@ -1,6 +1,7 @@
 import { PALETTE } from "../constants";
 import { isSocialModalVisibleAtom, selectedLinkAtom, selectedLinkDescriptionAtom, store } from "../store";
 import makeIcon from "./Icon";
+import { opacityTrickleDown } from "../utils";
 
 export default function makeSocialIcon(
     k, 
@@ -34,7 +35,7 @@ export default function makeSocialIcon(
       store.set(selectedLinkDescriptionAtom, description);
     });
 
-    // TODO : Opacity modifier for child game objects
+        opacityTrickleDown(parent, [subtitleText, linkSwitch]);
 
     return socialIcon;
 }

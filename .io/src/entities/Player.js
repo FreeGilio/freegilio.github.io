@@ -6,10 +6,10 @@ export default function createPlayer(k, posVec2, speed){
         k.sprite("player", {anim: "walk-down-idle"}),
         k.scale(SPRITE_SCALE),
         k.anchor("center"),
-        k.area({ shape: new k.Rect(k.vec2(0), 5, 10)}),
+        k.area({ shape: new k.Rect(k.vec2(0), 10, 10)}),
         k.body(),
         k.pos(posVec2),
-        "Player",
+        "player",
         {
             direction: k.vec2(0, 0),
             directionName: "walk-down",
@@ -63,11 +63,17 @@ export default function createPlayer(k, posVec2, speed){
             player.direction = worldMousePos.sub(player.pos).unit();
         }
 
-        if (player.direction.eq(k.vec2(0,0)) 
-            && !player.getCurAnim().name.includes("idle")){
-            player.play(`${player.directionName}-idle`);
-            return;
-        }
+      if (player.direction.eq(k.vec2(0, 0))) {
+          const idleAnim = `${player.directionName}-idle`;
+
+          if (player.getCurAnim().name !== idleAnim) {
+              player.play(idleAnim);
+          }
+
+          return;
+      }
+
+      
 
         if (
       player.direction.x > 0 &&
@@ -122,13 +128,15 @@ export default function createPlayer(k, posVec2, speed){
       player.play(player.directionName);
     }
 
-    player.move(player.direction.scale(speed));
-    });
-
     if (player.direction.x && player.direction.y) {
           player.move(player.direction.scale(DIAGONAL_FACTOR * speed));
           return;
     }
+
+    player.move(player.direction.scale(speed));
+    });
+
+
 
     return player;
 }

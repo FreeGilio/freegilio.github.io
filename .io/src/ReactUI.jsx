@@ -8,6 +8,9 @@ export default function ReactUI() {
     <>
      <p className="controls-message">Tap/Click around to move</p> 
      <CameraController/>
+     <SocialModal/>
+     <EmailModal/>
+     <ProjectModal/>
     </>
     ); 
 }

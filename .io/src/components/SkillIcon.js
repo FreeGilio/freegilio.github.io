@@ -1,4 +1,5 @@
 import { PALETTE } from "../constants";
+import { opacityTrickleDown } from "../utils";
 import makeIcon from "./Icon";
 
 
@@ -19,7 +20,7 @@ export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle) {
         skillIcon.applyImpulse(player.direction.scale(1000));
     });
 
-    // TODO : Opacity modifier for child game objects
+    opacityTrickleDown(parent, [subtitleText]);
 
     return skillIcon;
 }

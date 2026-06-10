@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useAtom, useAtomValue } from "jotai";
 import { emailAtom, isEmailModalVisibleAtom } from "../store";
 

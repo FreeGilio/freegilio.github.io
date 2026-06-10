@@ -1,10 +1,10 @@
 import { useAtom, useAtomValue } from "jotai";
-import { isSocialModalVisibleAtom, selectedLinkAtom } from "../store";
+import { isSocialModalVisibleAtom, selectedLinkAtom, selectedLinkDescriptionAtom } from "../store";
 
 export default function SocialModal(){
     const [isVisible, setIsVisible] = useAtom(isSocialModalVisibleAtom);
     const selectedLink = useAtomValue(selectedLinkAtom);
-    const selectedLinkDescription = useAtomValue(selectedLinkAtom);
+    const selectedLinkDescription = useAtomValue(selectedLinkDescriptionAtom);
 
     const buttons = [
         {

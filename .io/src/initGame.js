@@ -17,14 +17,14 @@ export default async function initGame() {
         sliceX: 4,
         sliceY: 16,
         anims:{
-            "walk-down-idle": { from: 0, to: 3, loop: true },
-            "walk-left-down-idle": { from: 4, to: 7, loop: true },
-            "walk-left-idle": { from: 8, to: 11, loop: true },
-            "walk-left-up-idle": { from: 12, to: 15, loop: true },
-            "walk-up-idle": { from: 16, to: 19, loop: true },
-            "walk-right-up-idle": { from: 20, to: 23, loop: true },
-            "walk-right-idle": { from: 24, to: 27, loop: true },
-            "walk-right-down-idle": { from: 28, to: 31, loop: true },
+            "walk-down-idle": { from: 0, to: 3, loop: true, speed: 5 },
+            "walk-left-down-idle": { from: 4, to: 7, loop: true, speed: 5 },
+            "walk-left-idle": { from: 8, to: 11, loop: true, speed: 5 },
+            "walk-left-up-idle": { from: 12, to: 15, loop: true, speed: 5 },
+            "walk-up-idle": { from: 16, to: 19, loop: true, speed: 5 },
+            "walk-right-up-idle": { from: 20, to: 23, loop: true, speed: 5 },
+            "walk-right-idle": { from: 24, to: 27, loop: true, speed: 5 },
+            "walk-right-down-idle": { from: 28, to: 31, loop: true, speed: 5 },
             "walk-down": { from: 32, to: 35, loop: true },
             "walk-left-down": { from: 36, to: 39, loop: true },
             "walk-left": { from: 40, to: 43, loop: true },
@@ -36,6 +36,7 @@ export default async function initGame() {
          
         }
     });
+    k.loadSprite("portbeacon","./sprites/portbeacon.png");
     k.loadSprite("grass-area", "./sprites/GrassAreaWip.png");
     k.loadFont("ibm-regular", "./fonts/IBMPlexSans-Regular.ttf");
     k.loadFont("ibm-bold", "./fonts/IBMPlexSans-Bold.ttf");
@@ -99,9 +100,9 @@ export default async function initGame() {
     makeSection(
         k, 
         k.vec2(k.center().x, k.center().y - 400), 
-        "About", 
+        generalData.section1Name, 
         (parent) => {
-            const container = parent.add([k.pos(-805, -700), k.opacity(0)]);
+        const container = parent.add([k.pos(-805, -700), k.opacity(0)]);
 
             container.add([
                 k.text(generalData.header.title, { font: "ibm-bold", size: 88}),
@@ -126,8 +127,8 @@ export default async function initGame() {
                     socialContainer, 
                     k.vec2(socialData.pos.x, socialData.pos.y), 
                     socialData.imageData, 
-                    socialData.subtitle, 
-                    socialData.email
+                    socialData.name, 
+                    socialData.address
                 );
                 continue;
                 }
@@ -137,7 +138,7 @@ export default async function initGame() {
                     socialContainer, 
                     k.vec2(socialData.pos.x, socialData.pos.y), 
                     socialData.imageData,
-                    socialData.subtitle, 
+                    socialData.name, 
                     socialData.link,
                     socialData.description
                 );
@@ -151,21 +152,21 @@ export default async function initGame() {
     makeSection(
         k, 
         k.vec2(k.center().x - 400, k.center().y), 
-        "Skills", 
+        generalData.section2Name, 
         (parent) => {}
     );
 
     makeSection(
         k, 
         k.vec2(k.center().x + 400, k.center().y), 
-        "Experience", 
+        generalData.section3Name, 
         (parent) => {}
     );
 
      makeSection(
         k, 
         k.vec2(k.center().x, k.center().y + 400), 
-        "Projects", 
+        generalData.section4Name, 
         (parent) => {}
     );
 
