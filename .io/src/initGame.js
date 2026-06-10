@@ -6,6 +6,7 @@ import { cameraZoomValueAtom, store } from "./store";
 import makeSection from "./components/Section";
 import makeEmailIcon from "./components/EmailIcon";
 import makeSocialIcon from "./components/SocialIcon";
+import { makeAppear } from "./utils";
 
 export default async function initGame() {
     const generalData = await (await fetch("./configs/generalData.json")).json();
@@ -110,7 +111,7 @@ export default async function initGame() {
             ]);
 
             container.add([
-                k.text(generalData.header.subtitle, { font: "ibm-bold", size: 88}),
+                k.text(generalData.header.subtitle, { font: "ibm-bold", size: 48}),
                 k.color(k.Color.fromHex(PALETTE.color1)),
                 k.pos(485,100),
                 k.opacity(0),
@@ -135,12 +136,15 @@ export default async function initGame() {
                     k, 
                     socialContainer, 
                     k.vec2(socialData.pos.x, socialData.pos.y), 
-                    socialData.imageData, 
+                    socialData.imageData,
                     socialData.subtitle, 
                     socialData.link,
                     socialData.description
                 );
             }
+
+            makeAppear(k, container);
+            makeAppear(k, socialContainer);
         }
     );
 

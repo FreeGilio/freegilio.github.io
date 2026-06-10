@@ -1,4 +1,7 @@
 import CameraController from "./reactComponents/CameraController";
+import EmailModal from "./reactComponents/EmailModal";
+import ProjectModal from "./reactComponents/ProjectModal";
+import SocialModal from "./reactComponents/SocialModal";
 
 export default function ReactUI() {
     return(

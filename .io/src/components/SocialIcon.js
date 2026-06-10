@@ -2,7 +2,6 @@ import { PALETTE } from "../constants";
 import { isSocialModalVisibleAtom, selectedLinkAtom, selectedLinkDescriptionAtom, store } from "../store";
 import makeIcon from "./Icon";
 
-
 export default function makeSocialIcon(
     k, 
     parent, 
