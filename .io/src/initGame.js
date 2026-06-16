@@ -8,6 +8,7 @@ import makeEmailIcon from "./components/EmailIcon";
 import makeSocialIcon from "./components/SocialIcon";
 import { makeAppear } from "./utils";
 import makeSkillIcon from "./components/SkillIcon";
+import makeExperienceCard from "./components/ExperienceCard";
 
 export default async function initGame() {
     const generalData = await (await fetch("./configs/generalData.json")).json();
@@ -180,7 +181,23 @@ export default async function initGame() {
         k, 
         k.vec2(k.center().x + 400, k.center().y), 
         generalData.section3Name, 
-        (parent) => {}
+        (parent) => {
+             const container = parent.add([
+                k.opacity(0),
+                k.pos(0)
+            ]);
+            for (const experienceData of experiencesData){
+                makeExperienceCard(
+                    k, 
+                    container, 
+                    k.vec2(experienceData.pos.x, experienceData.pos.y), 
+                    experienceData.cardHeight,
+                    experienceData.roleData
+                );
+            }
+
+            makeAppear(k, container);
+        }
     );
 
      makeSection(
