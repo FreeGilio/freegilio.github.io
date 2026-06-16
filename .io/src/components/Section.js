@@ -15,7 +15,7 @@ export default function makeSection(k, posVec2, sectionName, onCollide = null) {
   section.add([
     k.text(sectionName, {font: "ibm-bold", size: 64}),
     k.color(PALETTE.color2),
-    k.scale(SPRITE_SCALE / 64),
+    //k.scale(SPRITE_SCALE / 64),
     k.anchor("center"),
     k.pos(0, -20),
   ]);
