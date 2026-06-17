@@ -9,12 +9,14 @@ import makeSocialIcon from "./components/SocialIcon";
 import { makeAppear } from "./utils";
 import makeSkillIcon from "./components/SkillIcon";
 import makeExperienceCard from "./components/ExperienceCard";
+import makeProjectCard from "./components/ProjectCard";
 
 export default async function initGame() {
     const generalData = await (await fetch("./configs/generalData.json")).json();
     const socialsData = await (await fetch("./configs/socialsData.json")).json();
     const skillsData = await (await fetch("./configs/skillsData.json")).json();
     const experiencesData = await (await fetch("./configs/experiencesData.json")).json();
+    const projectsData = await (await fetch("./configs/projectsData.json")).json();
 
     const k = createKaplayCtx();
     k.loadSprite("player", "./sprites/bakari.png",{
@@ -44,6 +46,8 @@ export default async function initGame() {
     k.loadSprite("grass-area", "./sprites/GrassAreaWip.png");
     k.loadFont("ibm-regular", "./fonts/IBMPlexSans-Regular.ttf");
     k.loadFont("ibm-bold", "./fonts/IBMPlexSans-Bold.ttf");
+    k.loadFont("vcr", "./fonts/VCR_OSD_MONO_1.001.ttf");
+    k.loadFont("minecraft", "./fonts/Minecraft.ttf");
     k.loadSprite("github-logo", "./logos/github-logo.png");
     k.loadSprite("linkedin-logo", "./logos/linkedin-logo.png");
     k.loadSprite("youtube-logo", "./logos/youtube-logo.png");
@@ -59,9 +63,8 @@ export default async function initGame() {
     k.loadSprite("tailwind-logo", "./logos/tailwind-logo.png");
     k.loadSprite("python-logo", "./logos/python-logo.png");
     k.loadSprite("email-logo", "./logos/email-logo.png");
-    k.loadSprite("sonic-js", "./projects/sonic-js.png");
-    k.loadSprite("kirby-ts", "./projects/kirby-ts.png");
-    k.loadSprite("platformer-js", "./projects/platformer-js.png");
+    k.loadSprite("debugdash-gd", "./projects/debugdash-gd.png");
+    k.loadSprite("sonicbattlerush", "./projects/sonicbattlerush.png");
     k.loadShaderURL("tiledPattern", null, "./shaders/tiledPattern.frag");
 
     if (k.width() < 10000){
@@ -109,14 +112,14 @@ export default async function initGame() {
         const container = parent.add([k.pos(-805, -700), k.opacity(0)]);
 
             container.add([
-                k.text(generalData.header.title, { font: "ibm-bold", size: 88}),
+                k.text(generalData.header.title, { font: "minecraft", size: 88}),
                 k.color(k.Color.fromHex(PALETTE.color1)),
                 k.pos(395,0),
                 k.opacity(0),
             ]);
 
             container.add([
-                k.text(generalData.header.subtitle, { font: "ibm-bold", size: 48}),
+                k.text(generalData.header.subtitle, { font: "minecraft", size: 48}),
                 k.color(k.Color.fromHex(PALETTE.color1)),
                 k.pos(485,100),
                 k.opacity(0),
@@ -204,7 +207,23 @@ export default async function initGame() {
         k, 
         k.vec2(k.center().x, k.center().y + 400), 
         generalData.section4Name, 
-        (parent) => {}
+        (parent) => {
+            const container = parent.add([
+                k.opacity(0),
+                k.pos(0)
+            ]);
+            for (const project of projectsData){
+                makeProjectCard(
+                    k,
+                    container,
+                    k.vec2(project.pos.x, project.pos.y),
+                    project.data,
+                    project.thumbnail
+                );
+            }
+
+            makeAppear(k, container);
+        }
     );
 
 

@@ -19,7 +19,7 @@ export default function makeExperienceCard(
   ]);
 
   const title = card.add([
-    k.text(roleData.title, { font: "ibm-bold", size: 32 }),
+    k.text(roleData.title, { font: "minecraft", size: 32 }),
     k.color(k.Color.fromHex(PALETTE.color1)),
     k.pos(20, 20),
     k.opacity(0),
@@ -30,7 +30,7 @@ export default function makeExperienceCard(
     k.text(
       `${roleData.company.name} -- ${roleData.company.startDate}-${roleData.company.endDate}`,
       {
-        font: "ibm-regular",
+        font: "minecraft",
         size: 20,
       }
     ),
@@ -40,7 +40,7 @@ export default function makeExperienceCard(
   ]);
 
   const description = card.add([
-    k.text(roleData.description, { font: "ibm-regular", size: 25, width: 750 }),
+    k.text(roleData.description, { font: "minecraft", size: 25, width: 750 }),
     k.color(k.Color.fromHex(PALETTE.color1)),
     k.pos(20, 110),
     k.opacity(0),

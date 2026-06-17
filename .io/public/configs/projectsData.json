@@ -1,0 +1,35 @@
+[
+  {
+    "pos": { "x": 0, "y": 350 },
+    "thumbnail": "debugdash-gd",
+    "data": {
+      "title": "Debug Dash - Auto runner game",
+      "links": [
+        {
+          "id": 0,
+          "name": "Live Demo",
+          "link": "https://freegilio.itch.io/debug-dash"
+        },
+        {
+          "id": 1,
+          "name": "Source Code",
+          "link": "https://github.com/FreeGilio/Debug-Dash"
+        }
+      ]
+    }
+  },
+  {
+    "pos": { "x": 0, "y": 840 },
+    "thumbnail": "sonicbattlerush",
+    "data": {
+      "title": "2D traditional fighting fan-game",
+      "links": [
+        {
+          "id": 0,
+          "name": "Game Demo",
+          "link": "https://freegilio.itch.io/sonic-battle-rush"
+        }
+      ]
+    }
+  }
+]

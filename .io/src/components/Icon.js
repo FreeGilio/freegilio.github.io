@@ -14,7 +14,7 @@ export default function makeIcon(k, parent, posVec2, imageData, subtitle) {
     ]);
 
     const subtitleText = icon.add([
-        k.text(subtitle, {font: "ibm-bold", size: 32}),
+        k.text(subtitle, {font: "minecraft", size: 32}),
         k.color(k.Color.fromHex(PALETTE.color1)),
         k.anchor("center"),
         k.pos(0, 100),
