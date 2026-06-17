@@ -56,11 +56,9 @@ export default async function initGame() {
     k.loadSprite("javascript-logo", "./logos/js-logo.png");
     k.loadSprite("typescript-logo", "./logos/ts-logo.png");
     k.loadSprite("react-logo", "./logos/react-logo.png");
-    k.loadSprite("nextjs-logo", "./logos/nextjs-logo.png");
-    k.loadSprite("postgres-logo", "./logos/postgres-logo.png");
     k.loadSprite("html-logo", "./logos/html-logo.png");
+    k.loadSprite("csharp-logo", "./logos/csharp-logo.png");
     k.loadSprite("css-logo", "./logos/css-logo.png");
-    k.loadSprite("tailwind-logo", "./logos/tailwind-logo.png");
     k.loadSprite("python-logo", "./logos/python-logo.png");
     k.loadSprite("email-logo", "./logos/email-logo.png");
     k.loadSprite("debugdash-gd", "./projects/debugdash-gd.png");

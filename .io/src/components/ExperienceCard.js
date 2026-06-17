@@ -31,7 +31,7 @@ export default function makeExperienceCard(
       `${roleData.company.name} -- ${roleData.company.startDate}-${roleData.company.endDate}`,
       {
         font: "minecraft",
-        size: 20,
+        size: 25,
       }
     ),
     k.color(k.Color.fromHex(PALETTE.color1)),
