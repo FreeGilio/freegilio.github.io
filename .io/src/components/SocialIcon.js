@@ -35,7 +35,13 @@ export default function makeSocialIcon(
       store.set(selectedLinkDescriptionAtom, description);
     });
 
-        opacityTrickleDown(parent, [subtitleText, linkSwitch]);
+    linkSwitch.onClick(() => {
+      store.set(isSocialModalVisibleAtom, true);
+      store.set(selectedLinkAtom, link);
+      store.set(selectedLinkDescriptionAtom, description);
+    });
+
+    opacityTrickleDown(parent, [subtitleText, linkSwitch]);
 
     return socialIcon;
 }

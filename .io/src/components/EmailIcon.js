@@ -34,6 +34,11 @@ export default function makeEmailIcon(
       store.set(emailAtom, email);
     });
 
+     emailSwitch.onClick(() => {
+        store.set(isEmailModalVisibleAtom, true);
+        store.set(emailAtom, email);
+    });
+
     opacityTrickleDown(parent, [subtitleText, emailSwitch]);
 
     return emailIcon;

@@ -1,6 +1,7 @@
 import { PALETTE } from "../constants";
 import { opacityTrickleDown } from "../utils";
 import makeIcon from "./Icon";
+import { SPRITE_SCALE } from "../constants";
 
 
 export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle) {
@@ -19,6 +20,8 @@ export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle) {
     skillIcon.onCollide("player", (player) => {
         skillIcon.applyImpulse(player.direction.scale(1000));
     });
+
+    skillIcon.onClick()
 
     opacityTrickleDown(parent, [subtitleText]);
 

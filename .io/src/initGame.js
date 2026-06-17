@@ -10,6 +10,7 @@ import { makeAppear } from "./utils";
 import makeSkillIcon from "./components/SkillIcon";
 import makeExperienceCard from "./components/ExperienceCard";
 import makeProjectCard from "./components/ProjectCard";
+import { SPRITE_SCALE } from "./constants";
 
 export default async function initGame() {
     const generalData = await (await fetch("./configs/generalData.json")).json();
@@ -42,7 +43,13 @@ export default async function initGame() {
          
         }
     });
-    k.loadSprite("portbeacon","./sprites/portbeacon.png");
+     k.loadSprite("portbeacon", "./sprites/portbeacons.png",{
+        sliceX: 2,
+        sliceY: 2,
+        anims:{
+            "stand": { from: 0, to: 3, loop: true, speed: 5 },            
+        }
+    });
     k.loadSprite("grass-area", "./sprites/GrassAreaWip.png");
     k.loadFont("ibm-regular", "./fonts/IBMPlexSans-Regular.ttf");
     k.loadFont("ibm-bold", "./fonts/IBMPlexSans-Bold.ttf");
