@@ -1,7 +1,7 @@
 import { PALETTE } from "./constants";
 import createPlayer from "./entities/Player";
 import createArea from "./components/Playground";
-import createKaplayCtx from "./kaplayCTX";
+import createKaplayCtx from "./kaplayCtx";
 import { cameraZoomValueAtom, store } from "./store";
 import makeSection from "./components/Section";
 import makeEmailIcon from "./components/EmailIcon";
