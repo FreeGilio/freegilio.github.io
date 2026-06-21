@@ -17,6 +17,12 @@
   src: url(/fonts/IBMPlexSans-Regular.ttf);
 }
 
+@font-face {
+  font-family: "minecraft";
+  src: url(/fonts/Minecraft.ttf);
+}
+
+
 :root {
   font-family: "ibm-bold";
   font-size: 1em;
