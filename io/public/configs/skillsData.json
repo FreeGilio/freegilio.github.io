@@ -2,6 +2,7 @@
   {
     "pos": { "x": 0, "y": 0 },
     "name": "JavaScript",
+    "link": "https://github.com/FreeGilio/freegilio.github.io/blob/main/io/src/initGame.js",
     "logoData": {
       "name": "javascript-logo",
       "width": 128,
@@ -11,6 +12,7 @@
   {
     "pos": { "x": -200, "y": 0 },
     "name": "TypeScript",
+    "link": "https://github.com/FreeGilio/freegilio.github.io/blob/main/io/src/reactComponents/EmailModal.jsx",
     "logoData": {
       "name": "typescript-logo",
       "width": 128,
@@ -20,6 +22,7 @@
   {
     "pos": { "x": 0, "y": -200 },
     "name": "React",
+    "link": "",
     "logoData": {
       "name": "react-logo",
       "width": 148,
@@ -29,6 +32,7 @@
   {
     "pos": { "x": -200, "y": -200 },
     "name": "HTML",
+    "link": "https://github.com/FreeGilio/freegilio.github.io/blob/main/io/index.html",
     "logoData": {
       "name": "html-logo",
       "width": 128,
@@ -38,6 +42,7 @@
   {
     "pos": { "x": -400, "y": -200 },
     "name": "CSS",
+    "link": "https://github.com/FreeGilio/freegilio.github.io/blob/main/io/style.css",
     "logoData": {
       "name": "css-logo",
       "width": 128,
@@ -47,6 +52,7 @@
   {
     "pos": { "x": -400, "y": 0 },
     "name": "Csharp",
+    "link": "https://github.com/FreeGilio/Owlsite",
     "logoData": {
       "name": "csharp-logo",
       "width": 128,
@@ -55,9 +61,10 @@
   },
   {
     "pos": { "x": -400, "y": 200 },
-    "name": "Python",
+    "name": "Godot",
+    "link": "https://github.com/FreeGilio/Debug-Dash/tree/main/debug-dash/Scripts",
     "logoData": {
-      "name": "python-logo",
+      "name": "godot-logo",
       "width": 128,
       "height": 128
     }

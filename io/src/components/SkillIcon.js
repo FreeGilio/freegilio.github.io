@@ -4,13 +4,14 @@ import makeIcon from "./Icon";
 import { SPRITE_SCALE } from "../constants";
 
 
-export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle) {
+export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle, link) {
     const [skillIcon, subtitleText] = makeIcon(
         k, 
         parent, 
         posVec2, 
         imageData, 
-        subtitle
+        subtitle,
+        link
     );
 
     skillIcon.use(
@@ -21,7 +22,9 @@ export default function makeSkillIcon(k, parent, posVec2, imageData, subtitle) {
         skillIcon.applyImpulse(player.direction.scale(1000));
     });
 
-    skillIcon.onClick()
+    skillIcon.onClick(() => {
+    window.open(link, "_blank");
+    });
 
     opacityTrickleDown(parent, [subtitleText]);
 

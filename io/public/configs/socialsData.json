@@ -8,11 +8,11 @@
   },
   {
     "pos": { "x": 550, "y": 250 },
-    "name": "Bluesky",
-    "description": "Here is my Bluesky!",
-    "link": "https://bsky.app/profile/freegilio.bsky.social",
+    "name": "X",
+    "description": "Here is my twitter/X!",
+    "link": "https://x.com/NextWorldRR",
     "imageData": {
-      "name": "bluesky-logo",
+      "name": "x-logo",
       "width": 128,
       "height": 128
     }
@@ -23,7 +23,7 @@
     "description": "I post my game projects here",
     "link": "https://freegilio.itch.io/",
     "imageData": {
-      "name": "substack-logo",
+      "name": "itchio-logo",
       "width": 128,
       "height": 128
     }

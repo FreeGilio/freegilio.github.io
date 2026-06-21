@@ -26,17 +26,19 @@ export default function makeSection(k, posVec2, sectionName, onCollide = null) {
     k.anchor("center"),
   ]);
 
-  if (onCollide) {
-    const onCollideController = section.onCollide("player", () => {
-      console.log("COLLISION");
-      onCollide(section);
-      onCollideController.cancel();
-    });
-  }
+ let activated = false;
 
-  section.onClick(() => {
-    onCollide(section)
-  });
+    const activate = () => {
+        if (activated) return;
+
+        activated = true;
+        onCollide?.(section);
+    };
+
+    if (onCollide) {
+        section.onCollide("player", activate);
+        section.onClick(activate);
+    }
 
     return section;
 }
