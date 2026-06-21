@@ -50,7 +50,7 @@ export default async function initGame() {
             "stand": { from: 0, to: 3, loop: true, speed: 5 },            
         }
     });
-    k.loadSprite("grass-area", "./sprites/GrassAreaWip.png");
+    k.loadSprite("grass-area", "./sprites/GrassArea.png");
     k.loadFont("ibm-regular", "./fonts/IBMPlexSans-Regular.ttf");
     k.loadFont("ibm-bold", "./fonts/IBMPlexSans-Bold.ttf");
     k.loadFont("vcr", "./fonts/VCR_OSD_MONO_1.001.ttf");
@@ -111,7 +111,7 @@ export default async function initGame() {
 
     makeSection(
         k, 
-        k.vec2(k.center().x + 300, k.center().y - 500), 
+        k.vec2(k.center().x + 630, k.center().y - 500), 
         generalData.section1Name, 
         (parent) => {
         const container = parent.add([k.pos(-805, -700), k.opacity(0)]);
@@ -163,7 +163,7 @@ export default async function initGame() {
 
     makeSection(
         k, 
-        k.vec2(k.center().x - 700, k.center().y + 50), 
+        k.vec2(k.center().x - 930, k.center().y - 100), 
         generalData.section2Name, 
         (parent) => {
             const container = parent.add([
@@ -188,7 +188,7 @@ export default async function initGame() {
 
     makeSection(
         k, 
-        k.vec2(k.center().x + 800, k.center().y + 300), 
+        k.vec2(k.center().x + 820, k.center().y + 630), 
         generalData.section3Name, 
         (parent) => {
              const container = parent.add([
@@ -211,7 +211,7 @@ export default async function initGame() {
 
      makeSection(
         k, 
-        k.vec2(k.center().x - 100, k.center().y + 600), 
+        k.vec2(k.center().x - 380, k.center().y + 800), 
         generalData.section4Name, 
         (parent) => {
             const container = parent.add([
