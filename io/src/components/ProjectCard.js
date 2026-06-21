@@ -17,6 +17,7 @@ export default function makeProjectCard(k, parent, posVec2, data, thumbnail) {
   const cardMask = card.add([
     k.rect(640, 360, { radius: 10 }),
     k.anchor("center"),
+    k.area(),
     k.mask("intersect"),
     k.opacity(0),
   ]);
@@ -39,20 +40,25 @@ export default function makeProjectCard(k, parent, posVec2, data, thumbnail) {
     k.opacity(0),
   ]);
 
-  const cardSwitch = card.add([
-    k.circle(30),
-    k.area(),
-    k.color(k.Color.fromHex(PALETTE.color1)),
-    k.pos(400, 0),
-    k.opacity(0),
-  ]);
+  // const cardSwitch = card.add([
+  //   k.circle(30),
+  //   k.area(),
+  //   k.color(k.Color.fromHex(PALETTE.color1)),
+  //   k.pos(400, 0),
+  //   k.opacity(0),
+  // ]);
 
-  cardSwitch.onCollide("player", () => {
+  cardMask.onCollide("player", () => {
     store.set(isProjectModalVisibleAtom, true);
     store.set(chosenProjectDataAtom, data);
   });
 
-  opacityTrickleDown(parent, [cardMask, image, cardTitle, cardSwitch]);
+  cardMask.onClick(() => {
+    store.set(isProjectModalVisibleAtom, true);
+    store.set(chosenProjectDataAtom, data);
+  });
+
+  opacityTrickleDown(parent, [cardMask, image, cardTitle]);
 
   return card;
 }

@@ -111,22 +111,22 @@ export default async function initGame() {
 
     makeSection(
         k, 
-        k.vec2(k.center().x, k.center().y - 400), 
+        k.vec2(k.center().x + 300, k.center().y - 500), 
         generalData.section1Name, 
         (parent) => {
         const container = parent.add([k.pos(-805, -700), k.opacity(0)]);
 
             container.add([
                 k.text(generalData.header.title, { font: "minecraft", size: 88}),
-                k.color(k.Color.fromHex(PALETTE.color1)),
-                k.pos(395,0),
+                k.color(k.Color.fromHex(PALETTE.color2)),
+                k.pos(205,0),
                 k.opacity(0),
             ]);
 
             container.add([
                 k.text(generalData.header.subtitle, { font: "minecraft", size: 48}),
-                k.color(k.Color.fromHex(PALETTE.color1)),
-                k.pos(485,100),
+                k.color(k.Color.fromHex(PALETTE.color2)),
+                k.pos(385,100),
                 k.opacity(0),
             ]);
 
@@ -163,7 +163,7 @@ export default async function initGame() {
 
     makeSection(
         k, 
-        k.vec2(k.center().x - 400, k.center().y), 
+        k.vec2(k.center().x - 700, k.center().y + 50), 
         generalData.section2Name, 
         (parent) => {
             const container = parent.add([
@@ -187,7 +187,7 @@ export default async function initGame() {
 
     makeSection(
         k, 
-        k.vec2(k.center().x + 400, k.center().y), 
+        k.vec2(k.center().x + 800, k.center().y + 300), 
         generalData.section3Name, 
         (parent) => {
              const container = parent.add([
@@ -210,7 +210,7 @@ export default async function initGame() {
 
      makeSection(
         k, 
-        k.vec2(k.center().x, k.center().y + 400), 
+        k.vec2(k.center().x - 100, k.center().y + 600), 
         generalData.section4Name, 
         (parent) => {
             const container = parent.add([

@@ -21,11 +21,11 @@ export default function makeSocialIcon(
     );
 
     const linkSwitch = socialIcon.add([
-        k.circle(30),
+        k.circle(50),
         k.color(k.Color.fromHex(PALETTE.color2)),
         k.anchor("center"),
         k.area(),
-        k.pos(0,150),
+        k.pos(0,0),
         k.opacity(0),
     ]);
 
@@ -41,7 +41,7 @@ export default function makeSocialIcon(
       store.set(selectedLinkDescriptionAtom, description);
     });
 
-    opacityTrickleDown(parent, [subtitleText, linkSwitch]);
+    opacityTrickleDown(parent, [subtitleText]);
 
     return socialIcon;
 }

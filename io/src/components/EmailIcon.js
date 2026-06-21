@@ -21,11 +21,11 @@ export default function makeEmailIcon(
     );
 
     const emailSwitch = emailIcon.add([
-        k.circle(30),
+        k.circle(50),
         k.color(k.Color.fromHex(PALETTE.color2)),
         k.anchor("center"),
         k.area(),
-        k.pos(0,150),
+        k.pos(0,0),
         k.opacity(0),
     ]);
 
@@ -39,7 +39,7 @@ export default function makeEmailIcon(
         store.set(emailAtom, email);
     });
 
-    opacityTrickleDown(parent, [subtitleText, emailSwitch]);
+    opacityTrickleDown(parent, [subtitleText]);
 
     return emailIcon;
 }
